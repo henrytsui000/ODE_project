@@ -4,11 +4,14 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-# Pendulum rod lengths (m), bob masses (kg).
+##########################
+##     SET Parameter    ##
+## L1, L2 is rod length ##
+##  m1, m2 is bob mass  ##
+##########################
 L1, L2 = 1, 1
 m1, m2 = 1, 2
-# The gravitational acceleration (m.s-2).
-g = 9.81
+g = 9.81 # The G we used
 
 def deriv(y, t, L1, L2, m1, m2):
     """Return the first derivatives of y = theta1, z1, theta2, z2."""
@@ -36,7 +39,12 @@ def calc_E(y):
 # Maximum time, time point spacings and the time grid (all in s).
 tmax, dt = 30, 0.01
 t = np.arange(0, tmax+dt, dt)
-# Initial conditions: theta1, dtheta1/dt, theta2, dtheta2/dt.
+
+#############################
+##       Parameter      ##
+## upper theta, V of theta ##
+## upper theta, V of theta ##
+#############################
 y0 = np.array([0*np.pi/7, 0, 3*np.pi/12, 0])
 
 # Do the numerical integration of the equations of motion
