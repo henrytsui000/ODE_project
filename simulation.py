@@ -34,7 +34,7 @@ def calc_E(y):
             2*L1*L2*th1d*th2d*np.cos(th1-th2))
     return T + V
 
-tmax, dt = 30, 0.001
+tmax, dt = 100, 0.01
 t = np.arange(0, tmax+dt, dt)
 
 y0 = np.array([0*np.pi/7, 0, 3*np.pi/12, 0])
